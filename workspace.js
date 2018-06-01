@@ -591,6 +591,34 @@ cpdefine("inline:com-chilipeppr-workspace-tinyg", ["chilipeppr_ready"], function
                     });
                 }); //End Auto-Leveller
 
+            // My-Auto-Leveller
+            // com-chilipeppr-ws-myautolevel
+            chilipeppr.load(
+                "#com-chilipeppr-ws-myautolevel",
+                "http://raw.githubusercontent.com/chilipeppr/widget-autolevel/master/auto-generated-widget.html",
+                function() {
+                    require(["inline:com-chilipeppr-widget-autolevel"], function(autolevel) {
+                        autolevel.init();
+                        // setup toggle button
+                        var alBtn = $('#com-chilipeppr-ws-menu .autolevel-button');
+                        var alDiv = $('#com-chilipeppr-ws-autolevel');
+                        alBtn.click(function() {
+                            if (alDiv.hasClass("hidden")) {
+                                // unhide
+                                alDiv.removeClass("hidden");
+                                alBtn.addClass("active");
+                                autolevel.onDisplay();
+                            }
+                            else {
+                                alDiv.addClass("hidden");
+                                alBtn.removeClass("active");
+                                autolevel.onUndisplay();
+                            }
+                            $(window).trigger('resize');
+
+                        });
+                    });
+                }); //End My-Auto-Leveller
 
             // Macro
             // com-chilipeppr-ws-macro

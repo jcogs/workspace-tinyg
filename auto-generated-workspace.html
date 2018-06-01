@@ -264,10 +264,10 @@ cpdefine("inline:com-chilipeppr-workspace-tinyg", ["chilipeppr_ready"], function
         id: "com-chilipeppr-workspace-tinyg", // Make the id the same as the cpdefine id
         name: "Workspace / TinyG", // The descriptive name of your widget.
         desc: `This is a workspace for ChiliPeppr's Hardware Fiddle. It is geared towards CNC machines using TinyG.`,
-        url: "http://raw.githubusercontent.com/chilipeppr/workspace-tinyg/master/auto-generated-workspace.html", // The final URL of the working widget as a single HTML file with CSS and Javascript inlined. You can let runme.js auto fill this if you are using Cloud9.
-        fiddleurl: "http://ide.c9.io/chilipeppr/workspace-tinyg", // The edit URL. This can be auto-filled by runme.js in Cloud9 if you'd like, or just define it on your own to help people know where they can edit/fork your widget
-        githuburl: "http://github.com/chilipeppr/workspace-tinyg", // The backing github repo
-        testurl: "http://workspace-tinyg-chilipeppr.c9users.io/workspace.html", // The standalone working widget so can view it working by itself
+        url: "http://raw.githubusercontent.com/https://master/auto-generated-workspace.html", // The final URL of the working widget as a single HTML file with CSS and Javascript inlined. You can let runme.js auto fill this if you are using Cloud9.
+        fiddleurl: "http://ide.c9.io/undefined/undefined", // The edit URL. This can be auto-filled by runme.js in Cloud9 if you'd like, or just define it on your own to help people know where they can edit/fork your widget
+        githuburl: "http://github.com/https:/", // The backing github repo
+        testurl: "http://undefined-undefined.c9users.io/workspace.html", // The standalone working widget so can view it working by itself
 
         foreignSubscribe: {
             "/com-chilipeppr-elem-dragdrop/ondragover": "The Chilipeppr drag drop element will publish on channel /com-chilipeppr-elem-dragdrop/ondropped when a file is dropped so we subscribe to it so we can load a Gcode file when the user drags it onto the browser. It also adds a hover class to the bound DOM elem so we can add a CSS to hilite on hover",
@@ -814,6 +814,34 @@ cpdefine("inline:com-chilipeppr-workspace-tinyg", ["chilipeppr_ready"], function
                     });
                 }); //End Auto-Leveller
 
+            // My-Auto-Leveller
+            // com-chilipeppr-ws-myautolevel
+            chilipeppr.load(
+                "#com-chilipeppr-ws-myautolevel",
+                "http://raw.githubusercontent.com/chilipeppr/widget-autolevel/master/auto-generated-widget.html",
+                function() {
+                    require(["inline:com-chilipeppr-widget-autolevel"], function(autolevel) {
+                        autolevel.init();
+                        // setup toggle button
+                        var alBtn = $('#com-chilipeppr-ws-menu .autolevel-button');
+                        var alDiv = $('#com-chilipeppr-ws-autolevel');
+                        alBtn.click(function() {
+                            if (alDiv.hasClass("hidden")) {
+                                // unhide
+                                alDiv.removeClass("hidden");
+                                alBtn.addClass("active");
+                                autolevel.onDisplay();
+                            }
+                            else {
+                                alDiv.addClass("hidden");
+                                alBtn.removeClass("active");
+                                autolevel.onUndisplay();
+                            }
+                            $(window).trigger('resize');
+
+                        });
+                    });
+                }); //End My-Auto-Leveller
 
             // Macro
             // com-chilipeppr-ws-macro
@@ -1696,6 +1724,8 @@ cpdefine("inline:com-chilipeppr-workspace-tinyg", ["chilipeppr_ready"], function
                                     <li><button type="button" class="btn-ws btn btn-xs btn-default zipwhip-recvtext-button" data-container="body" data-toggle="popover" data-placement="auto" data-content="Login to Zipwhip to receive texts and start a CNC job when the text is received." data-trigger="hover" data-delay="100"><span class="zipwhip"></span>Recv Text to Trigger</button></li>
                                     <li><button type="button" class="btn-ws btn btn-xs btn-default autolevel-button" data-container="body" data-toggle="popover" data-placement="auto" data-content="Allows you to auto-level your PCB before milling. Most raw PCB boards have a slight warpage. This widget lets you probe the warpage and then it auto-scales your Gcode to match the warpage so you get very clean/predictable z-positions in your milling job."
                                     data-trigger="hover" data-delay="100">Auto-Level</button></li>
+                                    <li><button type="button" class="btn-ws btn btn-xs btn-default myautolevel-button" data-container="body" data-toggle="popover" data-placement="auto" data-content="Allows you to auto-level your PCB before milling. Most raw PCB boards have a slight warpage. This widget lets you probe the warpage and then it auto-scales your Gcode to match the warpage so you get very clean/predictable z-positions in your milling job."
+                                    data-trigger="hover" data-delay="100">My-Auto-Level</button></li>
                                     <li><button type="button" class="btn-ws btn btn-xs btn-default macro-button" data-container="body" data-toggle="popover" data-placement="auto" data-content="Run a macro." data-trigger="hover" data-delay="100">Macro</button></li>
                                     <li><button type="button" class="btn-ws btn btn-xs btn-default jscut-button" data-container="body" data-toggle="popover" data-placement="auto" data-content="Load file from JSCut" data-trigger="hover" data-delay="100">JScut</button></li>
                                     <!--<li><button type="button" class="btn-ws btn btn-xs btn-default lasersolder-button" data-container="body" data-toggle="popover" data-placement="auto" data-content="Laser Solderer" data-trigger="hover" data-delay="100">Laser Solder</button></li>-->
@@ -1742,6 +1772,9 @@ cpdefine("inline:com-chilipeppr-workspace-tinyg", ["chilipeppr_ready"], function
 
                         <!-- Auto Leveller -->
                         <div class="zhigh hidden" id="com-chilipeppr-ws-autolevel">Auto-Level Here</div>
+                      
+                        <!-- My Auto Leveller -->
+                        <div class="zhigh hidden" id="com-chilipeppr-ws-myautolevel">My-Auto-Level Here</div>
 
                         <!-- Macro -->
                         <div class="zhigh hidden" id="com-chilipeppr-ws-macro">Macro Here</div>
