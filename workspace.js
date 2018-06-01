@@ -595,13 +595,13 @@ cpdefine("inline:com-chilipeppr-workspace-tinyg", ["chilipeppr_ready"], function
             // com-chilipeppr-ws-myautolevel
             chilipeppr.load(
                 "#com-chilipeppr-ws-myautolevel",
-                "http://raw.githubusercontent.com/chilipeppr/widget-autolevel/master/auto-generated-widget.html",
+                "http://raw.githubusercontent.com/jcogs/widget-autolevel/master/auto-generated-widget.html",
                 function() {
-                    require(["inline:com-chilipeppr-widget-autolevel"], function(autolevel) {
+                    require(["inline:com-chilipeppr-widget-myautolevel"], function(autolevel) {
                         autolevel.init();
                         // setup toggle button
-                        var alBtn = $('#com-chilipeppr-ws-menu .autolevel-button');
-                        var alDiv = $('#com-chilipeppr-ws-autolevel');
+                        var alBtn = $('#com-chilipeppr-ws-menu .myautolevel-button');
+                        var alDiv = $('#com-chilipeppr-ws-myautolevel');
                         alBtn.click(function() {
                             if (alDiv.hasClass("hidden")) {
                                 // unhide
