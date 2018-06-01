@@ -784,7 +784,7 @@ cpdefine("inline:com-chilipeppr-workspace-tinyg", ["chilipeppr_ready"], function
             };
             wsObj.zipwhipRecvTextObj.init();
             //End Zipwhip Receive Text
-            
+            /*
             // Auto-Leveller
             // com-chilipeppr-ws-autolevel
             chilipeppr.load(
@@ -813,6 +813,7 @@ cpdefine("inline:com-chilipeppr-workspace-tinyg", ["chilipeppr_ready"], function
                         });
                     });
                 }); //End Auto-Leveller
+          */
 
             // My-Auto-Leveller
             // com-chilipeppr-ws-myautolevel
@@ -1722,8 +1723,9 @@ cpdefine("inline:com-chilipeppr-workspace-tinyg", ["chilipeppr_ready"], function
                                     <li><button type="button" class="btn-ws btn btn-xs btn-default webcam-button" data-container="body" data-toggle="popover" data-placement="auto" data-content="Stream your MJPEG webcam" data-trigger="hover" data-delay="100"><span class=""></span>Webcam</button></li>
                                     <li><button type="button" class="btn-ws btn btn-xs btn-default zipwhip-button" data-container="body" data-toggle="popover" data-placement="auto" data-content="Get a text sent to you when your CNC job is completed." data-trigger="hover" data-delay="100"><span class="zipwhip"></span>Send Text on Job Done</button></li>
                                     <li><button type="button" class="btn-ws btn btn-xs btn-default zipwhip-recvtext-button" data-container="body" data-toggle="popover" data-placement="auto" data-content="Login to Zipwhip to receive texts and start a CNC job when the text is received." data-trigger="hover" data-delay="100"><span class="zipwhip"></span>Recv Text to Trigger</button></li>
+                                    <!--
                                     <li><button type="button" class="btn-ws btn btn-xs btn-default autolevel-button" data-container="body" data-toggle="popover" data-placement="auto" data-content="Allows you to auto-level your PCB before milling. Most raw PCB boards have a slight warpage. This widget lets you probe the warpage and then it auto-scales your Gcode to match the warpage so you get very clean/predictable z-positions in your milling job."
-                                    data-trigger="hover" data-delay="100">Auto-Level</button></li>
+                                    data-trigger="hover" data-delay="100">Auto-Level</button></li>-->
                                     <li><button type="button" class="btn-ws btn btn-xs btn-default myautolevel-button" data-container="body" data-toggle="popover" data-placement="auto" data-content="Allows you to auto-level your PCB before milling. Most raw PCB boards have a slight warpage. This widget lets you probe the warpage and then it auto-scales your Gcode to match the warpage so you get very clean/predictable z-positions in your milling job."
                                     data-trigger="hover" data-delay="100">My-Auto-Level</button></li>
                                     <li><button type="button" class="btn-ws btn btn-xs btn-default macro-button" data-container="body" data-toggle="popover" data-placement="auto" data-content="Run a macro." data-trigger="hover" data-delay="100">Macro</button></li>
@@ -1770,9 +1772,9 @@ cpdefine("inline:com-chilipeppr-workspace-tinyg", ["chilipeppr_ready"], function
                         <!-- Zipwhip Text Messaging Receive Text widget -->
                         <div class="zhigh hidden" id="com-chilipeppr-ws-zipwhip-recvtext"></div>
 
-                        <!-- Auto Leveller -->
+                        <!-- Auto Leveller
                         <div class="zhigh hidden" id="com-chilipeppr-ws-autolevel">Auto-Level Here</div>
-                      
+                        -->
                         <!-- My Auto Leveller -->
                         <div class="zhigh hidden" id="com-chilipeppr-ws-myautolevel">My-Auto-Level Here</div>
 

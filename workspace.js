@@ -561,7 +561,7 @@ cpdefine("inline:com-chilipeppr-workspace-tinyg", ["chilipeppr_ready"], function
             };
             wsObj.zipwhipRecvTextObj.init();
             //End Zipwhip Receive Text
-            
+            /*
             // Auto-Leveller
             // com-chilipeppr-ws-autolevel
             chilipeppr.load(
@@ -590,6 +590,7 @@ cpdefine("inline:com-chilipeppr-workspace-tinyg", ["chilipeppr_ready"], function
                         });
                     });
                 }); //End Auto-Leveller
+          */
 
             // My-Auto-Leveller
             // com-chilipeppr-ws-myautolevel
